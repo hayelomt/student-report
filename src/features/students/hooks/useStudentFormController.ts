@@ -7,7 +7,7 @@ import useStudentFormState from '../states/useStudentFormState';
 import useStudentsState from '../states/useStudentsState';
 import { validateRules, Validator } from '../../../core/services/validation';
 
-export const useAddStudentController = () => {
+export const useStudentFormController = () => {
   const [setGradeForm] = useStudentFormState(
     (state) => [state.setGradeForm],
     shallow

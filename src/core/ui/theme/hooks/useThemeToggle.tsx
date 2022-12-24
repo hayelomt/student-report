@@ -1,6 +1,6 @@
 import { ColorScheme } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
-import appConstants from '../../../../util/constants';
+import appConstants from '../../../util/constants';
 
 export const useThemeToggle = () => {
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({

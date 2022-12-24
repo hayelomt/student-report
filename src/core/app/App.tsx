@@ -1,6 +1,6 @@
 import { ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
-import { useThemeToggle } from '../ui/layout/theme/hooks/useThemeToggle';
+import { useThemeToggle } from '../ui/theme/hooks/useThemeToggle';
 import AppRoutes from './AppRoutes';
 
 export default function App() {

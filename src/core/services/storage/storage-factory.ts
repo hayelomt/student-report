@@ -6,7 +6,7 @@ export class StorageFactory {
 
   private constructor() {}
 
-  static create(): BrowserStorage {
+  static getInstance(): BrowserStorage {
     if (StorageFactory.storage === null) {
       StorageFactory.storage = new StorageLocalImpl();
     }

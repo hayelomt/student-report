@@ -1,9 +1,9 @@
 import { Button, Grid, Group, Select, Text, TextInput } from '@mantine/core';
 import { DatePicker } from '@mantine/dates';
-import { useAddStudentController } from '../hooks/useAddStudentController';
+import { useStudentFormController } from '../hooks/useStudentFormController';
 
 const AddStudentForm = () => {
-  const { form, createStudent } = useAddStudentController();
+  const { form, createStudent } = useStudentFormController();
 
   return (
     <>

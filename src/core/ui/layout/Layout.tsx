@@ -1,17 +1,8 @@
-import {
-  AppShell,
-  Navbar,
-  Header,
-  Text,
-  Group,
-  ThemeIcon,
-  UnstyledButton,
-} from '@mantine/core';
-import { ListItem } from '@mantine/core/lib/List/ListItem/ListItem';
+import { AppShell, Navbar, Text, Group } from '@mantine/core';
 import { ReactNode } from 'react';
-import { IconUser, IconUserCircle } from '@tabler/icons';
-import { Link } from 'react-router-dom';
-import ThemeToggle from './theme/ThemToggle';
+import { IconBuildingArch, IconUsers } from '@tabler/icons';
+import ThemeToggle from '../theme/ThemToggle';
+import SidebarLink from './components/SidebarLink';
 
 type LayoutProps = {
   children?: ReactNode;
@@ -30,30 +21,17 @@ const Layout = ({ children }: LayoutProps) => {
               </Text>
             </Navbar.Section>
             <Navbar.Section grow mt="md">
-              <UnstyledButton
-                sx={(theme) => ({
-                  display: 'block',
-                  width: '100%',
-                  padding: theme.spacing.xs,
-                  borderRadius: theme.radius.sm,
-                  '&:hover': {
-                    backgroundColor:
-                      theme.colorScheme === 'dark'
-                        ? theme.colors.dark[6]
-                        : theme.colors.gray[0],
-                  },
-                })}
-                component={Link}
-                to="/students"
-              >
-                <Group>
-                  <ThemeIcon>
-                    <IconUserCircle />
-                  </ThemeIcon>
+              <SidebarLink
+                to="/grades"
+                label="Grades"
+                icon={<IconBuildingArch size={18} />}
+              />
 
-                  <Text size="sm">Students</Text>
-                </Group>
-              </UnstyledButton>
+              <SidebarLink
+                to="/students"
+                label="Students"
+                icon={<IconUsers size={18} />}
+              />
             </Navbar.Section>
             <Navbar.Section>
               <Group position="apart">

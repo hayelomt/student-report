@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import GradesListPage from '../../features/grades/pages/GradesListPage';
 import HomePage from '../../features/home/pages/HomePage';
 import StudentListPage from '../../features/students/pages/StudentListPage';
 
@@ -8,6 +9,7 @@ const AppRoutes = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/grades" element={<GradesListPage />} />
           <Route path="/students" element={<StudentListPage />} />
         </Routes>
       </BrowserRouter>

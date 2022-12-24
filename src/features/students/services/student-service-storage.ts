@@ -9,12 +9,17 @@ import { StudentService } from './contracts/student-service';
 class StudentServiceStorage implements StudentService {
   constructor(private storage: BrowserStorage) {}
 
+  async findAll(): Promise<Student[]> {
+    return (
+      (await this.storage.getItem<Student[]>(
+        appConstants.storageKeys.students
+      )) || []
+    );
+  }
+
   async createStudent(data: StudentCreate): Promise<OpRes<Student>> {
     return serviceExecutor(async () => {
-      const students: Student[] =
-        (await this.storage.getItem<Student[]>(
-          appConstants.storageKeys.students
-        )) || [];
+      const students: Student[] = await this.findAll();
 
       const student = StudentFactory.fromFormPayload(data);
       students.push(student);

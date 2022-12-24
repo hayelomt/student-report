@@ -2,6 +2,7 @@ const appConstants = {
   storageKeys: {
     theme: 'theme',
     students: 'students',
+    grades: 'grades',
   },
 };
 

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import GradesListPage from '../../features/grades/pages/GradesListPage';
-import HomePage from '../../features/home/pages/HomePage';
-import StudentListPage from '../../features/students/pages/StudentListPage';
+import GradesListPage from '../../features/grades/ui/pages/GradesListPage';
+import HomePage from '../../features/home/ui/pages/HomePage';
+import StudentListPage from '../../features/students/ui/pages/StudentListPage';
 
 const AppRoutes = () => {
   return (

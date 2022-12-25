@@ -18,6 +18,7 @@ const GradeList = ({ onEdit }: GradeListProps) => {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Order</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Actions</th>
@@ -27,6 +28,7 @@ const GradeList = ({ onEdit }: GradeListProps) => {
           {grades.map((grade) => (
             <tr key={grade.id}>
               <td>{grade.name}</td>
+              <td>{grade.order}</td>
               <td>{DateUtils.parseElapsed(grade.created_at)}</td>
               <td>{DateUtils.parseElapsed(grade.updated_at)}</td>
               <td>

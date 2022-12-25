@@ -1,14 +1,17 @@
 import { Button, Drawer, Group, Text } from '@mantine/core';
 import { useState } from 'react';
 import Layout from '../../../core/ui/layout/Layout';
+import Loaders from '../../../core/ui/shared/loaders';
 import GradeForm from '../components/GradeForm';
 import GradeList from '../components/GradeList';
 import { useLoadGrades } from '../hooks/useLoadGrades';
+import useGradesState from '../states/useGradesState';
 
 const GradesListPage = () => {
   useLoadGrades();
 
   const [createOpen, setCreateOpen] = useState(false);
+  const loading = useGradesState((state) => state.loading);
 
   return (
     <>
@@ -20,6 +23,7 @@ const GradesListPage = () => {
           </Button>
         </Group>
 
+        <Loaders.Linear loading={loading} />
         <GradeList onEdit={() => setCreateOpen(true)} />
       </Layout>
 

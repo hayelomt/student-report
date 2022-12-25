@@ -36,6 +36,16 @@ const GradeForm = ({ onClose }: GradeFormProps) => {
               {...form.getInputProps('name')}
             />
           </Grid.Col>
+
+          <Grid.Col span={12}>
+            <TextInput
+              withAsterisk
+              placeholder="Order"
+              label="Order"
+              type="number"
+              {...form.getInputProps('order')}
+            />
+          </Grid.Col>
         </Grid>
 
         <Group position="right" mt="xl">

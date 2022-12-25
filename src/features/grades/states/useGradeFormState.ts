@@ -17,6 +17,7 @@ type GradeAction = {
 const initialState: GradeState = {
   grade: {
     name: '',
+    order: 1,
   },
   mode: 'create',
   editId: null,

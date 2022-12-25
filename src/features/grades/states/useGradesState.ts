@@ -1,6 +1,7 @@
 import create from 'zustand';
 import { Factories } from '../../../core/app/factories';
 import { Grade } from '../models/grade';
+import { GradeUtils } from '../services/grade-utils';
 
 type GradeState = {
   grades: Grade[];
@@ -24,7 +25,7 @@ const useGradesState = create<GradeState & GradeAction>()((set, get) => ({
   ...initialState,
 
   addGrade(grade) {
-    set({ grades: [grade, ...get().grades] });
+    set({ grades: GradeUtils.sort([grade, ...get().grades]) });
   },
 
   async loadGrades() {
@@ -32,7 +33,7 @@ const useGradesState = create<GradeState & GradeAction>()((set, get) => ({
 
     const grades = await gradeService.findAll();
 
-    set({ loading: false, grades });
+    set({ loading: false, grades: GradeUtils.sort(grades) });
   },
 
   editGrade(id, grade) {
@@ -40,7 +41,7 @@ const useGradesState = create<GradeState & GradeAction>()((set, get) => ({
     const index = curGrades.findIndex((i) => i.id === id);
     if (index !== -1) {
       curGrades[index] = grade;
-      set({ grades: curGrades });
+      set({ grades: GradeUtils.sort(curGrades) });
     }
   },
 }));
